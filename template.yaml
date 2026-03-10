@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda saudação personalizada
+
+Resources:
+  OlaNomeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs20.x
+      CodeUri: src/
+      Description: Retorna saudação com o nome recebido
+      Events:
+        OlaApi:
+          Type: Api
+          Properties:
+            Path: /ola
+            Method: POST
+        OlaApiGet:
+          Type: Api
+          Properties:
+            Path: /ola
+            Method: GET
+
+Outputs:
+  OlaApiUrl:
+    Description: URL do endpoint /ola
+    Value: !Sub
+      - "https://${ApiId}.execute-api.${AWS::Region}.amazonaws.com/Prod/ola"
+      - ApiId: !Ref ServerlessRestApi
+    Export:
+      Name: !Sub "${AWS::StackName}-OlaApiUrl"

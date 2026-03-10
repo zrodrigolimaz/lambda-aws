@@ -1,0 +1,6 @@
+{
+  "name": "lambda-ola-nome",
+  "version": "1.0.0",
+  "description": "Lambda que retorna saudação personalizada",
+  "main": "src/index.js"
+}
