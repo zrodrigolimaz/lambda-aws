@@ -1,6 +1,6 @@
 # Lambda - Saudação Personalizada
 
-Lambda em Node.js que recebe um JSON com o campo `nome` e retorna uma mensagem de saudação personalizada.
+Lambda em Node.js que recebe um JSON com o campo `nome` e retorna uma mensagem de saudação personalizada. Deploy automático via GitHub Actions (OIDC).
 
 ## Entrada
 
